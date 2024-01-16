@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+// using below package we can create multiple pages and reuse them
 const expressLayouts = require('express-ejs-layouts');
 const methodOverride = require("method-override");
 const connectDB = require('./server/config/db');
@@ -22,10 +23,12 @@ app.use(session({
   // Date.now() - 30 * 24 * 60 * 60 * 1000
 }));
 
+// THESE ARE THE MIDDLEWARES USED:
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 // Conntect to Database
@@ -49,7 +52,7 @@ app.use('/', require('./server/routes/dashboard'));
 // Handle 404
 app.get('*', function(req, res) {
   //res.status(404).send('404 Page Not Found.')
-  res.status(404).render('404');
+  res.status(404).render('404'); 
 })
 
 

@@ -11,9 +11,12 @@ const NoteSchema = new Schema({
     required: true,
   },
   body: {
+    // This needs to be changed to store the canvas :
     type: String,
     required: true,
   },
+
+
   createdAt: {
     type: Date,
     default: Date.now()

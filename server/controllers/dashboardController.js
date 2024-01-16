@@ -39,7 +39,9 @@ exports.dashboard = async (req, res) => {
       notes,
       layout: "../views/layouts/dashboard",
       current: page,
-      pages: Math.ceil(count / perPage)
+      array: [42,23,4],
+      pages: Math.ceil(count / perPage),
+      userlogo : req.user.profileImage
     });
  
     // Original Code

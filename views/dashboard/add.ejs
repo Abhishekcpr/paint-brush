@@ -5,29 +5,50 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-          <li class="breadcrumb-item active">Add Note</li>
+          <li class="breadcrumb-item active">Add Canvas</li>
         </ol>
       </nav>
       <div class="col d-flex justify-content-between align-items-center">
-        <h1 class="h3">Add Note</h1>
+        <h1 class="h3">Add Canvas</h1>
       </div>
     </div>
   </div>
 
 
+ 
+
   <form action="/dashboard/add" method="POST" class="position-relative">
-    <div class="form-group mb-4 position-absolute" style="left:1px; top:1px; right: 1px;">
+    <div class="form-group mb-4" >
       <input type="text" class="form-control fw-bold border-0 fs-4" id="title" name="title" placeholder="Title" required>
     </div>
 
-    <div class="form-group mb-4">
-      <textarea required class="form-control pt-5 fs-4" id="body" name="body" placeholder="Take a note..." rows="12"></textarea>
+
+    <div class="form-group mb-4" id="canvas-form">
+      <textarea required class="form-control pt-5 fs-4" id="body" name="body" placeholder="Take a note..." rows="1"></textarea>
     </div>
 
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-lg">+ Add Note</button>
+    <div class="form-group" id ="add-button">
+      <button type="submit"  id="submit" class="btn btn-primary btn-lg  ">+ Add </button>
     </div>
 
   </form>
 
+
+
 </div>
+
+<div class="drawing-board">
+  <table id="board"></table>
+
+  <div class="tools">
+    <div class="color-palette">
+        <table id="colorPalette">
+            
+        </table>
+    </div>
+
+    <button id="shape-fill">Fill</button>
+  </div>
+</div>
+
+<button id="submitter">Submitter</button>

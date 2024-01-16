@@ -8,7 +8,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "abhishek yadav",
   "license": "ISC",
   "dependencies": {
     "connect-mongo": "^4.6.0",

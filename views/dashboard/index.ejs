@@ -2,10 +2,10 @@
 
   <div class="row mb-4">
     <div class="col">
-      <h1>Hey, <%= userName %></h1>
+      <h1>Hi, <%= userName %></h1>
     </div>
     <div class="col text-end">
-      <a href="/dashboard/add" class="btn btn-primary">+ New Note</a>
+      <a href="/dashboard/add" class="btn btn-primary">+ New Canvas</a>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
     <%  }} else { %>
       <div class="row">
         <div class="col-3">
-          <img src="/img/human-3.svg" alt="Human pointing hand toward a create button">
+          <img src=<%= userlogo %> class = "profile-image" alt="User image">
         </div>
         <div class="col mt-md-4">
           <h2>Okay...</h2>

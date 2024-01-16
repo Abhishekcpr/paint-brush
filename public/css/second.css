@@ -1,0 +1,86 @@
+body{
+    background-color: rgb(202, 186, 216);
+   
+}
+
+h1{
+    text-align: center;
+    color: green;
+}
+
+
+/* for the entire canvas :  */
+.drawing-board{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border : 2px solid red;
+}
+
+.tools{
+    border : 2px solid green ;
+    height : 500px ;
+    width : 20%;
+}
+
+
+/* FOR Table  */
+/* Apply general styling to the table */
+table  {
+    width: 70%;
+    border-collapse: collapse;
+    margin : 20px 0 0 0 ;
+    
+    cursor: url('../img/pen.png'), auto ;
+  }
+  
+  /* Add borders to table cells */
+  td {
+    border: 1px solid #ccc;
+    padding: 3px;
+    background-color: whitesmoke;
+  }
+
+  .filled {
+    background-color: #000;
+}
+  
+ 
+  
+  /* Add a subtle box shadow to the table */
+  table {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Make the table responsive */
+  @media (max-width: 600px) {
+    td, th {
+      padding: 2px;
+    }
+  }
+
+
+/* table for color palette:  */
+table > #colorPalette {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#colorPalette td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#selectedColor {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+#body{
+  display: contents;
+}
+

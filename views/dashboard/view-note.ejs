@@ -9,7 +9,7 @@
         </ol>
       </nav>
       <div class="col d-flex justify-content-between align-items-center">
-        <h1 class="h3">View Note</h1>
+        <h1 class="h3">View Canvas</h1>
         <button type="button" class="btn btn-danger me-2" data-bs-toggle="modal" id="deleteButton" data-bs-target="#deleteModal">
           Delete
         </button>
@@ -19,7 +19,7 @@
 
 
   <form action="/dashboard/item/<%= noteID %>?_method=PUT" method="POST" class="position-relative">
-    <div class="form-group mb-4 position-absolute" style="left:1px; top:1px; right: 1px;">
+    <div class="form-group mb-4" >
       <input type="text" class="form-control fw-bold border-0 fs-4" id="title" name="title" value="<%= note.title %>" placeholder="Title">
     </div>
 
@@ -48,7 +48,7 @@
       </div>
       <div class="modal-body">
         <p>
-          This will delete your note <b class="fw-bold"><%= note.title %></b><br/>
+          This will delete your canvas <b class="fw-bold"><%= note.title %></b><br/>
           Are you sure?
         </p>
       </div>
@@ -56,10 +56,48 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
   
         <form action="/dashboard/item-delete/<%= noteID %>?_method=DELETE" method="POST" class="position-relative">
-          <button type="submit" class="btn btn-primary">Delete Note</button>
+          <button type="submit" class="btn btn-primary">Delete Canvas</button>
         </form>
         
       </div>
     </div>
   </div>
 </div>
+
+
+
+<!-- make all changes here  -->
+<div class="drawing-board">
+  <table id="board"></table>
+
+  <div class="tools">
+    <div class="color-palette">
+        <table id="colorPalette">
+            
+        </table>
+    </div>
+
+    <button id="shape-fill">Fill</button>
+  </div>
+</div>
+
+<button id="submitter">Submitter</button>
+
+<!-- <script src="/logic2.js"></script> -->
+<script>
+   boardData = JSON.parse('<%= note.body %>');
+  console.log("derived");
+  console.log(typeof(boardData));
+  console.log(("derived", boardData));
+  // console.log(location.href);
+
+   
+  // for(x in boardData)
+  // {
+  //   let [i,j,cellColorCode] = x
+  //   colorBoard[i][j] = cellColorCode
+  // }
+
+  // console.log(colorBoard);
+
+</script>

@@ -1,6 +1,6 @@
 :root {
-  --background-color: #FFC700;
-  --bs-primary-rgb: #12296c;
+  --background-color: #eaff00;
+  --bs-primary-rgb: #5d126c;
 }
 
 body {
@@ -93,4 +93,14 @@ h1,h2,h3,h4,h5,h6 {
   position: absolute;
   right: -50px;
   bottom: -30px;
+}
+
+.profile-image{
+  height : 300px ;
+  width: 250px;
+  border-radius: 20%;
+}
+
+#body{
+display: hidden;
 }
