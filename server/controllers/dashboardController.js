@@ -12,7 +12,7 @@ exports.dashboard = async (req, res) => {
 
   const locals = {
     title: "Dashboard",
-    description: "Free NodeJS Notes App.",
+    description: "Free NodeJS Painting app.",
   };
 
   try {
@@ -23,7 +23,9 @@ exports.dashboard = async (req, res) => {
       {
         $project: {
           title: { $substr: ["$title", 0, 30] },
-          body: { $substr: ["$body", 0, 100] },
+          // body: { $substr: ["$body", 0, 100] },
+          createdAt :{ $substr: ["$createdAt", 0, 100] },
+          updatedAt :{ $substr: ["$updatedAt", 0, 100] }
         },
       }
       ])

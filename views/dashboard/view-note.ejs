@@ -28,12 +28,18 @@
     </div>
 
     <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-lg">Update</button>
+      <button type="submit" id="submit" class="btn btn-primary btn-lg">Update</button>
+     
     </div>
+
+   
 
   </form>
 
+  <button  id="download-image" class="btn btn-primary btn-lg mt-2">Download image</button>
+
 </div>
+
 
 
 
@@ -41,7 +47,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">You are about to delete a note</h5>
+        <h5 class="modal-title">You are about to delete the canvas</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -66,38 +72,34 @@
 
 
 
-<!-- make all changes here  -->
+
 <div class="drawing-board">
   <table id="board"></table>
 
   <div class="tools">
     <div class="color-palette">
+      <h5 class="tool-content"> Color picker</h5>
         <table id="colorPalette">
             
         </table>
     </div>
 
-    <button id="shape-fill">Fill</button>
+     <div class="selected-color" id="color-box"></div>
+    <div class="controls">
+       <div title="draw" class="control-button" id="draw">🖌</div>
+       <div title="fill shape" class="control-button" id="filler">🎨</div>
+       <div  title="reset" class="control-button" id ="cleaner">🧹</div>
+
+    </div>
+   
   </div>
 </div>
 
-<button id="submitter">Submitter</button>
 
-<!-- <script src="/logic2.js"></script> -->
+
 <script>
    boardData = JSON.parse('<%= note.body %>');
-  console.log("derived");
-  console.log(typeof(boardData));
-  console.log(("derived", boardData));
-  // console.log(location.href);
-
-   
-  // for(x in boardData)
-  // {
-  //   let [i,j,cellColorCode] = x
-  //   colorBoard[i][j] = cellColorCode
-  // }
-
-  // console.log(colorBoard);
+  // console.log(("derived", boardData));
+ 
 
 </script>

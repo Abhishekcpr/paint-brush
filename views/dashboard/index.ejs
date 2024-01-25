@@ -14,8 +14,11 @@
       <div class="col-sm-3 mb-4">
         <div class="card border-primary" style="min-height: 210px">
           <a href="/dashboard/item/<%= notes[i]._id %>" class="card-body text-decoration-none">
-            <h5 class="card-title"><%= notes[i].title %></h5>
-            <p class="card-text"><%= notes[i].body %></p>
+            <h5 class="card-title text-center"><%= notes[i].title %></h5>
+            <p class="fw-bold card-text">Created at :</p>
+            <p class="card-text"> <%= notes[i].createdAt %></p>
+            <p class="fw-bold card-text">Updated at :</p>
+            <p class="card-text"> <%= notes[i].updatedAt %></p>
           </a>
         </div>
       </div>

@@ -164,7 +164,6 @@ colorTable();
 
 if(boardData)
 {
-  console.log("I have started...",boardData);
   
   for(x in boardData)
   {
@@ -221,8 +220,9 @@ document.getElementById('colorPalette').addEventListener('click', function(event
         cellId = event.target.id ;
         let targetElement = document.getElementById(cellId)
         color = targetElement.style.backgroundColor;
-        targetElement.style.borderColor = "white";
-        targetElement.style.borderWidth = "2px";
+        let colorBox = document.getElementById("color-box")
+        colorBox.style.backgroundColor = color ;
+        
 
     }
 });
@@ -343,19 +343,7 @@ function fillTheShape(i,j, cellColorCode)
    console.log(colorBoard);
 }
 
-document.querySelector("#shape-fill").addEventListener('click',()=>{
- 
-  if(!mode.shapefill)
-  {
-    mode.draw = false ;
-  }
-  else
-  {
-    mode.draw = true ;
-  }
-  mode.shapefill = !mode.shapefill ;
-   
-});
+
 
 
 
@@ -379,3 +367,53 @@ document.querySelector("#submit").addEventListener('click',(e)=>{
 //   const compressedData = LZString.compressToBase64(originalData);
   document.getElementById("body").value = originalData
 })
+
+
+// control buttons code 
+let draw = document.getElementById("draw") ;
+draw.addEventListener('click',()=>{
+  mode.draw= true ;
+  mode.shapefill = false ;
+  console.log("draw");
+  
+})
+
+let fillShape = document.getElementById("filler") ;
+fillShape.addEventListener('click',()=>{
+  mode.draw= false ;
+  mode.shapefill = true ;
+  console.log("fill");
+})
+
+let reset = document.getElementById("cleaner") ;
+reset.addEventListener('click',()=>{
+  console.log("clear");
+  mode.draw = false ;
+  mode.shapefill = false ;
+
+  for(let i=0 ; i < numberOfRows ; i++)
+  {
+    for(let j = 0 ; j < numberOfColumns ; j++)
+    {
+      colorBoard[i][j] = 0 ;
+     let getId = makeId(i,j) ;
+      document.getElementById(getId).style.backgroundColor = colorsArray[0] ;
+    }
+  }
+  
+})
+
+
+// CONVERTING THE CANVAS TO AN IMAGE
+
+function htmlTableToImage() {
+  const table = document.getElementById("board");
+
+  html2canvas(table).then(function(canvas) {
+      canvas.toBlob(function(blob) {
+          saveAs(blob, 'PaintBrush.png');
+      });
+  });
+}
+
+document.getElementById("download-image").addEventListener('click',htmlTableToImage) ;

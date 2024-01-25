@@ -29,6 +29,7 @@
 
     <div class="form-group" id ="add-button">
       <button type="submit"  id="submit" class="btn btn-primary btn-lg  ">+ Add </button>
+      <button id="download-image" class="btn btn-primary btn-lg ml-15 ">Download image </button>
     </div>
 
   </form>
@@ -42,13 +43,20 @@
 
   <div class="tools">
     <div class="color-palette">
+      <h5 class="tool-content"> Color picker</h5>
         <table id="colorPalette">
             
         </table>
     </div>
 
-    <button id="shape-fill">Fill</button>
+     <div class="selected-color" id="color-box"></div>
+    <div class="controls">
+       <div title="draw" class="control-button" id="draw">🖌</div>
+       <div title="fill shape" class="control-button" id="filler">🎨</div>
+       <div  title="reset" class="control-button" id ="cleaner">🧹</div>
+
+    </div>
+   
   </div>
 </div>
 
-<button id="submitter">Submitter</button>

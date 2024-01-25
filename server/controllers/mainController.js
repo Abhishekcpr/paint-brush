@@ -5,7 +5,7 @@
 exports.homepage = async (req, res) => {
   const locals = {
     title: "NodeJs Notes",
-    description: "Free NodeJS Notes App.",
+    description: "Free NodeJS PaintBrush App.",
   }
   res.render('index', {
     locals,
@@ -21,7 +21,7 @@ exports.homepage = async (req, res) => {
 exports.about = async (req, res) => {
   const locals = {
     title: "About - NodeJs Notes",
-    description: "Free NodeJS Notes App.",
+    description: "Paint Brush App made using Node js.",
   }
   res.render('about', locals);
 }
